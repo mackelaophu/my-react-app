@@ -1,9 +1,9 @@
 import React from 'react';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div>
-      <h1>Hello, React with Webpack 5!</h1>
+      <h1>Hello, React with TypeScript and Webpack 5!</h1>
     </div>
   );
 };
