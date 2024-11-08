@@ -18,6 +18,11 @@ pipeline {
                 )
             }
         }
+        stage('Install Global npm Packages') {
+            steps {
+                sh 'npm install -g create-react-app eslint npm-check-updates typescript'
+            }
+        }
         stage('Install Dependencies') {
             steps {
                 // Cài đặt các dependency (ví dụ npm install cho dự án ReactJS)
