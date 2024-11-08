@@ -13,8 +13,8 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/, // Thêm TypeScript (.ts, .tsx) vào Webpack
         exclude: /node_modules/,
-        loader: 'ts-loader',
-        // use: 'ts-loader',
+        // loader: 'ts-loader',
+        use: 'ts-loader',
       },
       {
         test: /\.css$/,
