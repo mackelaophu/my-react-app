@@ -12,6 +12,7 @@ pipeline {
                 // Lệnh kiểm tra mã nguồn từ Git
                 // checkout scm
                 git(
+                    branch: 'main',
                     url: 'https://github.com/mackelaophu/my-react-app.git',
                     credentialsId: "${env.GIT_CREDENTIALS}"
                 )
