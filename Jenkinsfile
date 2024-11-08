@@ -3,14 +3,18 @@ pipeline {
 
     environment {
         // Định nghĩa biến môi trường
-        MY_VARIABLE = 'value'
+        GIT_CREDENTIALS = 'abc'
     }
 
     stages {
         stage('Checkout') {
             steps {
                 // Lệnh kiểm tra mã nguồn từ Git
-                checkout scm
+                // checkout scm
+                git(
+                    url: 'https://github.com/mackelaophu/my-react-app.git',
+                    credentialsId: "${env.GIT_CREDENTIALS}"
+                )
             }
         }
         stage('Install Dependencies') {
