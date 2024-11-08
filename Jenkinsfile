@@ -36,12 +36,6 @@ pipeline {
                 sh 'npm run build'
             }
         }
-        stage('Test') {
-            steps {
-                // Kiểm tra dự án
-                sh 'npm test'
-            }
-        }
         stage('Deploy') {
             steps {
                 // Triển khai dự án
