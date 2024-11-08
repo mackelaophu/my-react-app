@@ -4,6 +4,7 @@ pipeline {
     environment {
         // Định nghĩa biến môi trường
         GIT_CREDENTIALS = 'abc'
+        PATH = "/opt/homebrew/bin:$PATH" 
     }
 
     stages {
