@@ -1,6 +1,6 @@
 import React from 'react';
 
-const App: React.FC = () => {
+const MiniApp: React.FC = () => {
   return (
     <div>
       <h1>Hello, React with TypeScript and Webpack 5!</h1>
@@ -8,4 +8,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default MiniApp;

@@ -2,18 +2,19 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.tsx', // Điểm vào ứng dụng sử dụng TypeScript
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    clean: true,
+    library: 'MiniApp',
+    libraryTarget: 'umd',         // UMD format to support different environments
+    globalObject: 'this',         // Ensures compatibility across environments
   },
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/, // Thêm TypeScript (.ts, .tsx) vào Webpack
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        // loader: 'ts-loader',
         use: 'ts-loader',
       },
       {
@@ -28,15 +29,7 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'], // Hỗ trợ .ts, .tsx
-  },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    compress: true,
-    port: 3000,
-    hot: true,
+    extensions: ['.ts', '.tsx', '.js'],
   },
   mode: 'development',
 };
